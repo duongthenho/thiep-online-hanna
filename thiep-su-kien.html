@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thiệp Online</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1><a href="index.html">Thiệp Online Hanna</a></h1>
+    <nav class="menu">
+      <a href="/thiep-cuoi.html">Thiệp cưới</a>
+      <a href="/thiep-su-kien.html">Thiệp sự kiện</a>
+    </nav>
+  </header>
+
+  <section class="section" id="event">
+    <h2>Thiệp sự kiện</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="https://i.imgur.com/KCdXxy9.jpg" alt="Thiệp sinh nhật">
+        <p>Thiệp sinh nhật dễ thương cho bé.</p>
+      </div>
+      <div class="card">
+        <img src="https://i.imgur.com/KCdXxy9.jpg" alt="Thiệp sinh nhật">
+        <p>Thiệp sinh nhật dễ thương cho bé.</p>
+      </div>
+      <div class="card">
+        <img src="https://i.imgur.com/vG3ANXn.jpg" alt="Thiệp mừng khai trương">
+        <p>Thiệp mừng khai trương rực rỡ.</p>
+      </div>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <img src="https://i.imgur.com/KCdXxy9.jpg" alt="Thiệp sinh nhật">
+        <p>Thiệp sinh nhật dễ thương cho bé.</p>
+      </div>
+      <div class="card">
+        <img src="https://i.imgur.com/KCdXxy9.jpg" alt="Thiệp sinh nhật">
+        <p>Thiệp sinh nhật dễ thương cho bé.</p>
+      </div>
+      <div class="card">
+        <img src="https://i.imgur.com/vG3ANXn.jpg" alt="Thiệp mừng khai trương">
+        <p>Thiệp mừng khai trương rực rỡ.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Thiệp Online - Gửi lời chúc yêu thương
+  </footer>
+
+  <script>
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('click', () => {
+        alert('Bạn đã chọn thiệp này!');
+      });
+    });
+  </script>
+</body>
+</html>
