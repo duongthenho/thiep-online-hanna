@@ -6226,10 +6226,10 @@
 	<script>
 		document.addEventListener("DOMContentLoaded", function () {
 			const button = document.getElementById("BUTTON_TEXT4");
-			const name = document.querySelector('input[name="name"]')?.value || '';
-			const relationship = document.querySelector('input[name="relationship"]')?.value || '';
-			const message = document.querySelector('input[name="message"]')?.value || '';
 			button.addEventListener("click", function () {
+				const name = document.querySelector('input[name="name"]')?.value || '';
+				const relationship = document.querySelector('input[name="relationship"]')?.value || '';
+				const message = document.querySelector('input[name="message"]')?.value || '';
 				    fetch("https://script.google.com/macros/s/AKfycbwauLXnkZEiNVeQuTgsvtcVNXSKjEBLWVIARccmQl_ClC_H1kRIQkvGRHtxMZIn4hdejA/exec", {
 					redirect: "follow",
 					method: "POST",
