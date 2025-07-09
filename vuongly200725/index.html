@@ -6226,27 +6226,30 @@
 	<script>
 		document.addEventListener("DOMContentLoaded", function () {
 			const button = document.getElementById("BUTTON_TEXT4");
+			const name = document.querySelector('input[name="name"]')?.value || '';
+			const relationship = document.querySelector('input[name="relationship"]')?.value || '';
+			const message = document.querySelector('input[name="message"]')?.value || '';
 			button.addEventListener("click", function () {
 				    fetch("https://script.google.com/macros/s/AKfycbwauLXnkZEiNVeQuTgsvtcVNXSKjEBLWVIARccmQl_ClC_H1kRIQkvGRHtxMZIn4hdejA/exec", {
-						method: "POST",
-						headers: {
-							"Content-Type": "application/json"
-						},
-						body: JSON.stringify({
-							name: "Nho",
-							relationship: "Bạn",
-							message: "Chúc mừng cưới ❤️"
-						})
+					redirect: "follow",
+					method: "POST",
+					body: JSON.stringify({
+											name: name,
+											relationship: relationship,
+											message: message
+										}),      headers: {
+						"Content-Type": "text/plain;charset=utf-8",
+      },
+					
 						})
 						.then(res => res.json())
 						.then(data => {
 						console.log("✅ Thành công:", data);
-						alert("Gửi lời chúc thành công!");
 						})
 						.catch(err => {
 						console.error("❌ Lỗi gửi:", err);
-						alert("Không gửi được. Kiểm tra lại.");
 						});
+						alert("Gửi lời chúc thành công!");
 
 			// Gọi API hoặc thực hiện hành động tại đây
 			});
