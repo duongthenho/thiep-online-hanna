@@ -2527,14 +2527,14 @@
 	}
 
 	#HEADLINE15 {
-		width: 110px;
+		width: 350px;
 		top: 16px;
-		left: 136px;
+		left: 82px;
 	}
 
 	#HEADLINE15>.ladi-headline {
 		font-family: RGFuYluZNjcmlwdCWYXJpYWJsZUZvbnRfddodCdGY;
-		font-size: 31px;
+		font-size: 26px;
 		line-height: 1.6;
 		color: rgb(33, 61, 174);
 		letter-spacing: 2px;
@@ -2571,17 +2571,18 @@
 	}
 
 	#HEADLINE16 {
-		width: 467px;
+		width: 83%;
 		top: 58.611px;
 		left: 0px;
 	}
 
 	#HEADLINE16>.ladi-headline {
-		font-size: 15px;
-		line-height: 1.6;
+		font-size: 17px;
+		font-weight: bold;
+		line-height: 1.7;
 		color: rgb(33, 61, 174);
 		letter-spacing: 1px;
-		text-align: left;
+		text-align: center;
 	}
 
 	#HEADLINE16.ladi-animation>.ladi-headline,
@@ -4425,7 +4426,7 @@
 				<div id="GROUP14" class='ladi-element'>
 					<div class='ladi-group'>
 						<div id="HEADLINE15" class='ladi-element'>
-							<h3 class='ladi-headline ladi-transition'>Thư Mời<br></h3>
+							<h3 class='ladi-headline ladi-transition'>Trân trọng kính mời<br></h3>
 						</div>
 						<div id="LINE3" class='ladi-element'>
 							<div class='ladi-line'>
@@ -4433,7 +4434,7 @@
 							</div>
 						</div>
 						<div id="HEADLINE16" class='ladi-element'>
-							<h3 class='ladi-headline ladi-transition'>THAM DỰ LỄ CƯỚI CỦA ĐỨC VƯƠNG &amp; HOÀNG LÝ<br></h3>
+							<h3 id="name-invitation" class='ladi-headline ladi-transition' style="text-align: center;">Quý vị</h3>
 						</div>
 					</div>
 				</div>
@@ -6258,27 +6259,13 @@
 			});
 		});
 		</script>
-	<!-- <script>
-		document.addEventListener('DOMContentLoaded', function () {
-			const button = document.getElementById('BUTTON_TEXT4');
-
-			if (button) {
-			button.addEventListener('click', function () {
-				// Lấy dữ liệu từ form (tùy chỉnh selector cho đúng nếu khác)
-				const name = document.querySelector('input[name="name"]')?.value || '';
-				const quantity = document.querySelector('input[name="form_item6"]')?.value || '';
-				const note = document.querySelector('input[name="form_item7"]')?.value || '';
-
-				// Kiểm tra dữ liệu
-				if (!name || !quantity) {
-				alert('Vui lòng nhập đầy đủ thông tin.');
-				return;
-				}
-
-			});
-			}
-		});
-		</script> -->
+	<script>
+		const params = new URLSearchParams(window.location.search);
+		const tenKhach = params.get('ten');
+		if (tenKhach) {
+			document.getElementById('name-invitation').textContent = decodeURIComponent(tenKhach);
+		}
+	</script>
 </body>
 
 </html>
