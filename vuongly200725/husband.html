@@ -5097,16 +5097,6 @@
     let isPlaying = false;
     let hasScrolled = false;
 
-    // Auto play on first scroll
-    window.addEventListener('scroll', () => {
-      if (!hasScrolled) {
-        music.play();
-        controlBtn.textContent = '⏸️';
-        isPlaying = true;
-        hasScrolled = true;
-      }
-    });
-
     // Toggle play/pause on button click
     controlBtn.addEventListener('click', () => {
       if (isPlaying) {
