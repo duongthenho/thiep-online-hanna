@@ -74,6 +74,20 @@
 	<link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Dancing+Script:wght@400;700&family=Oswald:wght@400;700&family=Taviraj:wght@400;700&family=Tinos:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap" as="style" onload="this.onload = null; this.rel = 'stylesheet';">
 	<link rel="preload" href="https://w.ladicdn.com/v4/source/ladipagev3.min.js?v=1741764577443" as="script">
 	<style id="style_ladi" type="text/css">
+	#music-control {
+      position: fixed;
+      bottom: 40px;
+      left: 20px;
+      z-index: 9999;
+      background: rgba(189, 184, 184, 0.6);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 20px;
+      cursor: pointer;
+    }
 	a,
 	abbr,
 	acronym,
@@ -5069,6 +5083,42 @@
 	<div id="backdrop-popup" class="backdrop-popup"></div>
 	<div id="backdrop-dropbox" class="backdrop-dropbox"></div>
 	<div id="lightbox-screen" class="lightbox-screen"></div>
+	<!-- Audio -->
+	<audio id="bg-music" loop>
+		<source src="music.mp3" type="audio/mpeg">
+		Trình duyệt không hỗ trợ audio.
+	</audio>
+
+	<!-- Button -->
+	<button id="music-control">▶️</button>
+	<script>
+    const music = document.getElementById('bg-music');
+    const controlBtn = document.getElementById('music-control');
+    let isPlaying = false;
+    let hasScrolled = false;
+
+    // Auto play on first scroll
+    window.addEventListener('scroll', () => {
+      if (!hasScrolled) {
+        music.play();
+        controlBtn.textContent = '⏸️';
+        isPlaying = true;
+        hasScrolled = true;
+      }
+    });
+
+    // Toggle play/pause on button click
+    controlBtn.addEventListener('click', () => {
+      if (isPlaying) {
+        music.pause();
+        controlBtn.textContent = '▶️';
+      } else {
+        music.play();
+        controlBtn.textContent = '⏸️';
+      }
+      isPlaying = !isPlaying;
+    });
+  </script>
 	<script id="script_lazyload" type="text/javascript">
 	window.lazyload_run = function(dom, is_first, check_dom_rect) {
 		if(check_dom_rect && (document.body.clientWidth <= 0 || document.body.clientheight <= 0)) {
