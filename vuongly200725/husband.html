@@ -6287,6 +6287,11 @@
 	//]]>
 	</script>
 	<script>
+		const params = new URLSearchParams(window.location.search);
+		const tenKhach = params.get('ten')||'';
+		if (tenKhach) {
+			document.getElementById('name-invitation').textContent = decodeURIComponent(tenKhach);
+		}
 		document.addEventListener("DOMContentLoaded", function () {
 			const button = document.getElementById("BUTTON_TEXT4");
 			button.addEventListener("click", function () {
@@ -6297,8 +6302,8 @@
 					redirect: "follow",
 					method: "POST",
 					body: JSON.stringify({
-											name: name,
-											relationship: relationship,
+											name: '('+tenKhach+'): '+name,
+											relationship: relationship + ' (chú rể)',
 											message: message
 										}),      headers: {
 						"Content-Type": "text/plain;charset=utf-8",
@@ -6318,13 +6323,6 @@
 			});
 		});
 		</script>
-	<script>
-		const params = new URLSearchParams(window.location.search);
-		const tenKhach = params.get('ten');
-		if (tenKhach) {
-			document.getElementById('name-invitation').textContent = decodeURIComponent(tenKhach);
-		}
-	</script>
 </body>
 
 </html>
