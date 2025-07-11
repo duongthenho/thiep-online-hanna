@@ -70,7 +70,7 @@ nav.menu a:hover {
 /* Hero section (nếu có) */
 .hero {
   height: 90vh;
-  background: url('background-home.jpg') center/cover no-repeat;
+  background: url('../images/background-home.jpg') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
